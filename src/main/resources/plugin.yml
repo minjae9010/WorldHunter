@@ -1,0 +1,6 @@
+name: WorldHunter
+version: @version@
+main: tk.mjsv.WorldHunter
+api-version: 1.16
+authors: [ minjae9010 ]
+description: 땅따먹기 플러그인
