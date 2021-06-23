@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CmdHandler implements TabExecutor {
+    public static String index = "&f[&aWorld&cHunter&f]";
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         switch(label){

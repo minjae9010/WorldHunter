@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="302eb0a5-c9e7-4c2c-b471-0d184470a22d" name="디폴트 변경 목록" comment="adfa" />
+    <list default="true" id="302eb0a5-c9e7-4c2c-b471-0d184470a22d" name="디폴트 변경 목록" comment="adfa">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TeamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TeamHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +41,26 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1uL3BFFN4aPW61K6H84Uj3mUIzc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
