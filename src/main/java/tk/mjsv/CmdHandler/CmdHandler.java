@@ -1,4 +1,4 @@
-package tk.mjsv;
+package tk.mjsv.CmdHandler;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

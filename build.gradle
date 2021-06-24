@@ -7,8 +7,8 @@ plugins {
 group = 'tk.mjsv'
 version = '0.1'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '16'
+targetCompatibility = '16'
 
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
@@ -33,6 +33,9 @@ dependencies {
 
 processResources {
     from(sourceSets.main.resources.srcDirs) {
+        duplicatesStrategy 'exclude'
         filter ReplaceTokens, tokens: [version: version]
     }
 }
+
+

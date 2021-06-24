@@ -1,6 +1,7 @@
-package tk.mjsv;
+package tk.mjsv.CmdHandler;
 
 import org.bukkit.command.CommandSender;
+import tk.mjsv.CmdHandler.CmdHandler;
 
 public class TeamHandler {
     private static String index = CmdHandler.index;

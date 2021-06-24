@@ -6,10 +6,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 
 public class YAML {
-    private FileConfiguration teamData;
-    private File team = new File("GameData/teamData.yml");
+    private static  FileConfiguration teamData;
+    private static final File team = new File("GameData/teamData.yml");
 
-    public void loadData(){
+    public static void loadData(){
         teamData = YamlConfiguration.loadConfiguration(team);
         if(!team.exists()){
             teamData.set("team","");
