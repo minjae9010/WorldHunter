@@ -5,12 +5,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.mjsv.CmdHandler.CmdHandler;
-import tk.mjsv.EventHanler.EventHandler;
+import tk.mjsv.EventHanler.EventH;
 
 import java.util.Objects;
 
 
 public final class WorldHunter extends JavaPlugin {
+    public static String index = "&f[&aWorld&cHunter&f]";
     PluginDescriptionFile pdf = this.getDescription();
     @Override
     public void onEnable() {
@@ -19,7 +20,7 @@ public final class WorldHunter extends JavaPlugin {
             Objects.requireNonNull(getCommand($)).setTabCompleter(new CmdHandler());
         });
         YAML.loadData();
-        Bukkit.getPluginManager().registerEvents(new EventHandler(),this);
+        Bukkit.getPluginManager().registerEvents(new EventH(),this);
 
     }
 

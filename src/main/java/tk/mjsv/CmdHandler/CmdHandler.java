@@ -5,11 +5,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tk.mjsv.WorldHunter;
 
 import java.util.List;
 
 public class CmdHandler implements TabExecutor {
-    public static String index = "&f[&aWorld&cHunter&f]";
+    private static String index = WorldHunter.index;
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         switch(label){
