@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="302eb0a5-c9e7-4c2c-b471-0d184470a22d" name="디폴트 변경 목록" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624553444460</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="HashMap을 사용한 팀 데이터 저장">
+      <created>1624600350858</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624600350858</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -238,7 +243,8 @@
     <MESSAGE value="index 위치를 main으로 변경" />
     <MESSAGE value="join메세지 추가" />
     <MESSAGE value="잔오류 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="잔오류 수정" />
+    <MESSAGE value="HashMap을 사용한 팀 데이터 저장" />
+    <option name="LAST_COMMIT_MESSAGE" value="HashMap을 사용한 팀 데이터 저장" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
