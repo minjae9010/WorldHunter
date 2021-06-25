@@ -22,6 +22,7 @@ public final class WorldHunter extends JavaPlugin {
         YAML.loadData();
         Bukkit.getPluginManager().registerEvents(new EventH(),this);
 
+
     }
 
     @Override
