@@ -25,8 +25,7 @@ public class CmdHandler implements TabExecutor {
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         switch(alias){
             case "팀":
-                TeamHandler.TabExcutor(sender,args);
-                break;
+                return TeamHandler.TabExcutor(sender,args);
             case "타이머":
                 break;
         }

@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class YAML {
-    private static  FileConfiguration teamData;
+    public static  FileConfiguration teamData;
     private static final File team = new File("GameData/teamData.yml");
     public static HashMap<String, ArrayList<OfflinePlayer>> teamHash = new HashMap<>();
     public static List<String> teamList=null;
@@ -29,7 +29,7 @@ public class YAML {
                 teamList = teamData.getStringList("teamlist");
                 for (String tl : teamList) {
                     ArrayList<OfflinePlayer> sl = teamHash.get(tl);
-                    for (String pl : teamData.getStringList(tl)) {
+                    for (String pl : teamData.getStringList("team."+tl+".Player")) {
                         sl.add(Bukkit.getOfflinePlayerIfCached(pl));
                     }
                     teamHash.put(tl, sl);

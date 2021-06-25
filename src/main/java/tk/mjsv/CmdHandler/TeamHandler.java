@@ -1,7 +1,13 @@
 package tk.mjsv.CmdHandler;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import tk.mjsv.WorldHunter;
+import tk.mjsv.YAML;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class TeamHandler {
     private static final String index = WorldHunter.index;
@@ -14,12 +20,19 @@ public class TeamHandler {
             if (args[1].isEmpty())
                 sender.sendMessage(index+" 팀이름을 입력해주세요");
             else{
-                sender.sendMessage("check");
+                YAML.teamData.set("team."+args[2]+".Owner",sender.getName());
+                ArrayList<OfflinePlayer> tl = YAML.teamHash.get(args[2]);
+                tl.add((OfflinePlayer) sender);
+                YAML.teamHash.put(args[2],tl);
             }
 
         }
     }
-    public static void TabExcutor(CommandSender sender,String[] args){
-
+    public static List<String> TabExcutor(CommandSender sender, String[] args){
+        if(args.length==0){
+            if (sender.hasPermission("WorldHunter.MakeTeam"))
+                return Arrays.asList("생성","삭제");
+        }
+        return null;
     }
 }
