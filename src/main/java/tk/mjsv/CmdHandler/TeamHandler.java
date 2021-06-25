@@ -13,8 +13,12 @@ public class TeamHandler {
     private static final String index = WorldHunter.index;
     public static void Command(CommandSender sender,String[] args){
         if(args.length==0){
-            sender.sendMessage(index+" /팀 생성 (팀이름)");
+            sender.sendMessage(index+" /팀 생성 <팀이름>");
             sender.sendMessage(index+" /팀 초대 <플레이어>");
+            if(sender.isOp()){
+                sender.sendMessage(index+" /팀 주인변경 <팀이름> <플레이어>");
+                sender.sendMessage(index+" /팀 설정 <팀이름> <플레이어>");
+            }
         }
         else if (args[0].equals("생성")){
             if (args[1].isEmpty())
@@ -26,6 +30,11 @@ public class TeamHandler {
                 YAML.teamHash.put(args[2],tl);
             }
 
+        }
+        else if (args[0].equals("초대")){
+            if(args[1].isEmpty()){
+                sender.sendMessage(index+" 초대할 플레이어를 입력해주세요");
+            }
         }
     }
     public static List<String> TabExcutor(CommandSender sender, String[] args){
