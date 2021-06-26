@@ -16,6 +16,7 @@ public class CmdHandler implements TabExecutor {
                 TeamHandler.Command(sender,args);
                 break;
             case "타이머":
+                TimerHandler.Command(sender, args);
 
         }
         return false;

@@ -8,3 +8,5 @@ commands:
   팀:
     description: 팀 명령어
     permission: WorldHunter.Team
+  타이머:
+    description: 타이머
