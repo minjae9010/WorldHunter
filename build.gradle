@@ -32,9 +32,11 @@ dependencies {
 }
 
 processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        duplicatesStrategy 'exclude'
-        filter ReplaceTokens, tokens: [version: version]
+    task myCopy(type:Copy){
+        DuplicatesStrategy.INHERIT
+        from(sourceSets.main.resources.srcDirs) {
+            filter ReplaceTokens, tokens: [version: version]
+        }
     }
 }
 
