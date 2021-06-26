@@ -9,8 +9,9 @@ import tk.mjsv.WorldHunter;
 public class EventH implements Listener {
     private static final String index = WorldHunter.index;
     @EventHandler
-    public void onPlayerJOin(PlayerJoinEvent e){
-        e.joinMessage(Component.text(index+" "+e.getPlayer()+"님이 WorldHunter에 접속하셨습니다"));
+    public void onPlayerJoin(PlayerJoinEvent e){
+        e.setJoinMessage(index+e.getPlayer().getName()+"님이 WorldHunter에 접속하셨습니다");
+//        e.joinMessage(Component.text(index+" "+e.getPlayer().getName()+"님이 WorldHunter에 접속하셨습니다"));
     }
 
 }

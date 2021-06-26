@@ -8,12 +8,11 @@ import tk.mjsv.WorldHunter;
 public class TimerHandler {
     private static final String index = WorldHunter.index;
     private static String label = "타이머";
-    private static WorldHunter pl;
+    public static WorldHunter pl = WorldHunter.getPlugin(WorldHunter.class);
 
     public static int seconds = 0;
     public static int Pseconds = 0;
     public static int Wseconds = 0;
-    public static int taskid;
     public static boolean TimerStop = false;
     public static String Tset = "없음";
 
@@ -21,7 +20,7 @@ public class TimerHandler {
         if (sender.isOp()) {
             if (args.length == 1) {
                 if (args[0].equals("설정")) {
-                    sender.sendMessage(index + "§e/" + label + " 설정 <내용> <분> <초>");
+                    sender.sendMessage(index + " §e/" + label + "설정 <내용> <분> <초>");
                 }
                 if (args[0].equals("시작")) {
                     if (!(Pseconds == 0) & !(Wseconds == 0)) {
@@ -29,7 +28,7 @@ public class TimerHandler {
                             sender.sendMessage(index + "이미 타이머가 시작되었습니다");
                         } else {
                             sender.sendMessage(index + "타이머가 시작됩니다");
-                            taskid = Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
+                            Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
                         }
                     } else {
                         if (Pseconds == 0) {
@@ -47,6 +46,11 @@ public class TimerHandler {
                     } else {
                         sender.sendMessage(index + "타이머가 시작되지 않았습니다");
                     }
+                }
+                if (args[0].equals("자동")) {
+                    Pseconds = 7200;
+                    Wseconds = 3600;
+                    sender.sendMessage(index + "평화시간과 전쟁 시간이 자동으로 설정 되었습니다.");
                 }
             } else if (args.length >= 2 & args.length <= 6) {
                 if (args[0].equals("설정")) {
@@ -77,6 +81,7 @@ public class TimerHandler {
                     }
             } else {
                 sender.sendMessage(index + "§e/" + label + " 설정 <타입> <분> <초>");
+                sender.sendMessage(index + "§e/" + label + " 자동");
                 sender.sendMessage(index + "§e/" + label + " 시작");
                 sender.sendMessage(index + "§e/" + label + " 종료");
             }

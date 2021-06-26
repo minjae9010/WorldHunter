@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/WorldHunter-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/EventHanler/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/EventHanler/Timer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +29,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
@@ -79,7 +82,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fuckingjava" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.WorldHunter [jar]">
+    <configuration name="WorldHunter [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="worldhunter [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -103,6 +127,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.WorldHunter [jar]" />
         <item itemvalue="Gradle.worldhunter [jar]" />
       </list>
     </recent_temporary>
@@ -116,6 +141,33 @@
       <option name="presentableId" value="Default" />
       <updated>1624671776455</updated>
     </task>
+    <task id="LOCAL-00001" summary="타이머 추가">
+      <created>1624679721767</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624679721768</updated>
+    </task>
+    <task id="LOCAL-00002" summary="타이머 추가2">
+      <created>1624679795908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624679795908</updated>
+    </task>
+    <task id="LOCAL-00003" summary="타이머 추가2">
+      <created>1624679836398</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624679836398</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="타이머 추가" />
+    <MESSAGE value="타이머 추가2" />
+    <option name="LAST_COMMIT_MESSAGE" value="타이머 추가2" />
   </component>
 </project>
