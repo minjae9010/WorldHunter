@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="gradle insert 안되서 yml 만 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/EventHanler/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/EventHanler/Timer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +84,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--scan" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -184,12 +180,20 @@
       <option name="project" value="LOCAL" />
       <updated>1624679836398</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="gradle insert 안되서 yml 만 변경">
+      <created>1624719654548</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624719654548</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="타이머 추가" />
     <MESSAGE value="타이머 추가2" />
-    <option name="LAST_COMMIT_MESSAGE" value="타이머 추가2" />
+    <MESSAGE value="gradle insert 안되서 yml 만 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="gradle insert 안되서 yml 만 변경" />
   </component>
 </project>

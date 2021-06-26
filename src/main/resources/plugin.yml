@@ -1,5 +1,5 @@
 name: WorldHunter
-version: 0.1
+version: @version@
 main: tk.mjsv.WorldHunter
 api-version: 1.17
 authors: [ minjae9010 ]

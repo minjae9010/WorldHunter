@@ -1,4 +1,4 @@
-import org.apache.tools.ant.filters.ReplaceTokens
+import org.apache.tools.ant.filters.*
 
 plugins {
     id 'java'
@@ -32,12 +32,8 @@ dependencies {
 }
 
 processResources {
-    task myCopy(type:Copy){
-        DuplicatesStrategy.INHERIT
-        from(sourceSets.main.resources.srcDirs) {
-            filter ReplaceTokens, tokens: [version: version]
-        }
-    }
+    filter ReplaceTokens, tokens: [
+            'version': version
+    ]
 }
-
 
