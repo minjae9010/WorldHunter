@@ -13,17 +13,22 @@ import java.util.HashMap;
 import java.util.List;
 
 public class YAML {
-    public static  FileConfiguration teamData;
+    public static FileConfiguration teamData;
+    public static FileConfiguration ChunkData;
     private static final File team = new File("GameData/teamData.yml");
+    private static final File Chunk = new File("GameData/ChunkData.yml");
     public static HashMap<String, ArrayList<OfflinePlayer>> teamHash = new HashMap<>();
     public static List<String> teamList=null;
+    public static List<String> ChunkList=null;
 
     public static void loadData(){
         teamData = YamlConfiguration.loadConfiguration(team);
+        ChunkData = YamlConfiguration.loadConfiguration(Chunk);
         try {
             if (!team.exists()) {
                 teamData.save(team);
                 teamData.load(team);
+
 
             } else {
                 teamList = teamData.getStringList("teamlist");
@@ -34,6 +39,12 @@ public class YAML {
                     }
                     teamHash.put(tl, sl);
                 }
+            }
+            if(!Chunk.exists()){
+                ChunkData.save(Chunk);
+                ChunkData.load(Chunk);
+            }else{
+                ChunkList = ChunkData.getStringList("finishBuy");
             }
         } catch (InvalidConfigurationException|IOException e) {
             e.printStackTrace();
