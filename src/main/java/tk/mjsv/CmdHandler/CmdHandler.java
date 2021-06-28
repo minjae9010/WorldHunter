@@ -17,6 +17,8 @@ public class CmdHandler implements TabExecutor {
                 break;
             case "타이머":
                 TimerHandler.Command(sender, args);
+            case "땅":
+                WorldHandler.Command(sender, args);
 
         }
         return false;

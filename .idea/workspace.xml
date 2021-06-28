@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="gradle insert 안되서 yml 만 변경">
+    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="gradle resource filter 고쳤다 ...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,13 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624719654548</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="gradle resource filter 고쳤다 ...">
+      <created>1624721262948</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624721262948</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="타이머 추가" />
     <MESSAGE value="타이머 추가2" />
     <MESSAGE value="gradle insert 안되서 yml 만 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="gradle insert 안되서 yml 만 변경" />
+    <MESSAGE value="gradle resource filter 고쳤다 ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="gradle resource filter 고쳤다 ..." />
   </component>
 </project>
