@@ -2,7 +2,7 @@ package tk.mjsv.CmdHandler;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import tk.mjsv.EventHanler.Timer;
+import tk.mjsv.TimerHandler.Timer;
 import tk.mjsv.WorldHunter;
 
 public class TimerHandler {

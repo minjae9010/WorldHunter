@@ -1,4 +1,4 @@
-package tk.mjsv.EventHanler;
+package tk.mjsv.TimerHandler;
 
 import org.bukkit.Bukkit;
 import tk.mjsv.CmdHandler.TimerHandler;

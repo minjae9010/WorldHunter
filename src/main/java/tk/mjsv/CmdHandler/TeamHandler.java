@@ -1,7 +1,9 @@
 package tk.mjsv.CmdHandler;
 
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
+import org.yaml.snakeyaml.Yaml;
 import tk.mjsv.WorldHunter;
 import tk.mjsv.YAML;
 
@@ -24,16 +26,16 @@ public class TeamHandler {
             if (args[1].isEmpty())
                 sender.sendMessage(index+" 팀이름을 입력해주세요");
             else{
-                YAML.teamData.set("team."+args[2]+".Owner",sender.getName());
-                ArrayList<OfflinePlayer> tl = YAML.teamHash.get(args[2]);
-                tl.add((OfflinePlayer) sender);
-                YAML.teamHash.put(args[2],tl);
             }
 
         }
         else if (args[0].equals("초대")){
             if(args[1].isEmpty()){
                 sender.sendMessage(index+" 초대할 플레이어를 입력해주세요");
+            }
+            else if(Bukkit.getPlayer(args[2])==null){
+                sender.sendMessage(index+" 접속하지 않았거나 없는 플레이어 입니다.");
+            }else{
             }
         }
     }

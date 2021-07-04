@@ -50,4 +50,33 @@ public class YAML {
             e.printStackTrace();
         }
     }
+    public static void saveData(){
+        continue;
+    }
+    public static ArrayList<OfflinePlayer> getTeamList(String s){
+        ArrayList<OfflinePlayer> tl;
+        if(teamHash.containsKey(s)) {
+            tl = teamHash.get(s);
+            return tl;
+        }
+        else{
+            return null;
+        }
+    }
+    public static void addTeamList(String s,OfflinePlayer p){
+        ArrayList<OfflinePlayer> tl;
+        if(teamHash.containsKey(s)) {
+            tl = teamHash.get(s);
+            tl.add(p);
+            teamHash.put(s,tl);
+        }
+    }
+    public static void subTeamList(String s,OfflinePlayer p){
+        ArrayList<OfflinePlayer> tl;
+        if(teamHash.containsKey(s)) {
+            tl = teamHash.get(s);
+            tl.remove(p);
+            teamHash.put(s,tl);
+        }
+    }
 }
