@@ -5,6 +5,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,8 +19,9 @@ public class YAML {
     private static final File team = new File("GameData/teamData.yml");
     private static final File Chunk = new File("GameData/ChunkData.yml");
     public static HashMap<String, ArrayList<OfflinePlayer>> teamHash = new HashMap<>();
-    public static List<String> teamList=null;
-    public static List<String> ChunkList=null;
+    public static List<String> teamList= new ArrayList<>();
+    public static HashMap<String,OfflinePlayer> teamOwner = new HashMap<>();
+    public static List<String> ChunkList = new ArrayList<>();
 
     public static void loadData(){
         teamData = YamlConfiguration.loadConfiguration(team);
@@ -38,6 +40,7 @@ public class YAML {
                         sl.add(Bukkit.getOfflinePlayerIfCached(pl));
                     }
                     teamHash.put(tl, sl);
+                    teamOwner.put(tl, Bukkit.getOfflinePlayerIfCached(teamData.getString(tl+"Owner")));
                 }
             }
             if(!Chunk.exists()){
@@ -51,7 +54,15 @@ public class YAML {
         }
     }
     public static void saveData(){
-        continue;
+        teamData.set("teamlist",teamList);
+        for (String s:teamList){
+            teamData.set("team."+s+".Player",teamHash.get(s));
+        }
+        try {
+            teamData.save(team);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public static ArrayList<OfflinePlayer> getTeamList(String s){
         ArrayList<OfflinePlayer> tl;
@@ -62,6 +73,16 @@ public class YAML {
         else{
             return null;
         }
+    }
+    public static String getPlayerTeam(Player p){
+        String team = null;
+        for(String tl:teamList){
+            ArrayList<OfflinePlayer> pl = teamHash.get(tl);
+            if(pl.contains(p)){
+                team = tl;
+            }
+        }
+        return team;
     }
     public static void addTeamList(String s,OfflinePlayer p){
         ArrayList<OfflinePlayer> tl;
@@ -79,4 +100,23 @@ public class YAML {
             teamHash.put(s,tl);
         }
     }
+    public static void createTeam(String s,OfflinePlayer p){
+        ArrayList<OfflinePlayer> tl= new ArrayList<>();
+        tl.add(p);
+        teamList.add(s);
+        teamHash.put(s,tl);
+    }
+    public static void removeTeam(String s){
+        teamHash.remove(s);
+        teamList.remove(s);
+        teamOwner.remove(s);
+    }
+    public static OfflinePlayer getOwner(String s){
+        OfflinePlayer p = teamOwner.get(s);
+        return p;
+    }
+    public static void setOwner(String s,OfflinePlayer p){
+        teamOwner.put(s,p);
+    }
+
 }
