@@ -10,3 +10,7 @@ commands:
     permission: WorldHunter.Team
   타이머:
     description: 타이머
+  공지:
+    description: 공지 명령어
+  남은시간:
+    description: 타이머 남은시간

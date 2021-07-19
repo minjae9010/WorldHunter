@@ -77,5 +77,12 @@ public class Timer implements Runnable {
             Bukkit.getScheduler().cancelTasks(TimerHandler.pl);
         }
         count--;
+        switch (setting) {
+            case "평화":
+                new TimerData().updateData(Integer.toString(count), Integer.toString(TimerHandler.Wseconds));
+                break;
+            case "전쟁":
+                new TimerData().updateData("0", Integer.toString(count));
+        }
     }
 }
