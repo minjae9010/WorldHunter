@@ -14,3 +14,5 @@ commands:
     description: 공지 명령어
   남은시간:
     description: 타이머 남은시간
+  수분:
+    description: 수분 확인

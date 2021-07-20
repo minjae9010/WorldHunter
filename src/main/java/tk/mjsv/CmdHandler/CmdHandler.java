@@ -1,9 +1,11 @@
 package tk.mjsv.CmdHandler;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tk.mjsv.TimerHandler.Timer;
@@ -34,6 +36,15 @@ public class CmdHandler implements TabExecutor {
             case "남은시간":
                 if (Timer.set)
                     sender.sendMessage(index + Timer.setting + "시간: " + Timer.count / 60 + "분 " + Timer.count % 60 + "초");
+                else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
+                break;
+            case "수분":
+                if (Timer.set) {
+                    if (Timer.hm.getOrDefault((Player) sender, 100) > 80) sender.sendMessage(index + ChatColor.DARK_GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 50) sender.sendMessage(index + ChatColor.GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 30) sender.sendMessage(index + ChatColor.YELLOW + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+                    else sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+                }
                 else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
         }
         return false;

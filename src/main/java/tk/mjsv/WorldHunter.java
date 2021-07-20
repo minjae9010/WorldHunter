@@ -14,7 +14,7 @@ import java.util.Objects;
 
 
 public final class WorldHunter extends JavaPlugin {
-    public static String index = "§f[§aWorld§cHunter§f] ";
+    public static String index = "§f[§eWorld§aHunter§f] ";
     PluginDescriptionFile pdf = this.getDescription();
     @Override
     public void onEnable() {
