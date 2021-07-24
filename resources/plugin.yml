@@ -16,3 +16,5 @@ commands:
     description: 타이머 남은시간
   수분:
     description: 수분 확인
+  연구:
+    description: 연구 명령어

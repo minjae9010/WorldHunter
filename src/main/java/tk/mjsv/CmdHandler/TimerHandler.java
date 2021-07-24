@@ -6,6 +6,9 @@ import tk.mjsv.TimerHandler.Timer;
 import tk.mjsv.TimerHandler.TimerData;
 import tk.mjsv.WorldHunter;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TimerHandler {
     private static final String index = WorldHunter.index;
     private static String label = "타이머";
@@ -130,5 +133,16 @@ public class TimerHandler {
                 sender.sendMessage(index + "§e/" + label + " 추가 <타입> <분> <초>");
             }
         }
+    }
+
+    public static List<String> TabExcutor(CommandSender sender, String[] args) {
+        if (sender.isOp()) {
+            if (args.length == 1) {
+                return Arrays.asList("설정", "시작", "종료", "자동", "다시시작", "추가");
+            } else if (args.length == 2) {
+                if (args[0].equals("설정") || args[0].equals("추가")) return Arrays.asList("평화", "전쟁");
+            }
+        }
+        return null;
     }
 }

@@ -37,6 +37,4 @@ public class EventH implements Listener {
             e.getEntity().removePotionEffect(PotionEffectType.SLOW);
         }
     }
-
-
 }

@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.mjsv.CmdHandler.CmdHandler;
+import tk.mjsv.CmdHandler.StudyHandler;
 import tk.mjsv.CmdHandler.TimerHandler;
 import tk.mjsv.EventHanler.EventH;
 import tk.mjsv.TimerHandler.Timer;
@@ -24,6 +25,7 @@ public final class WorldHunter extends JavaPlugin {
         });
         YAML.loadData();
         Bukkit.getPluginManager().registerEvents(new EventH(),this);
+        Bukkit.getPluginManager().registerEvents(new StudyHandler(),this);
 
 
     }

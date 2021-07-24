@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 import tk.mjsv.TimerHandler.Timer;
 import tk.mjsv.WorldHunter;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class CmdHandler implements TabExecutor {
@@ -21,7 +23,11 @@ public class CmdHandler implements TabExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         switch (label) {
             case "팀":
-                TeamHandler.Command(sender, args);
+                try {
+                    TeamHandler.Command(sender, args);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "타이머":
                 TimerHandler.Command(sender, args);
@@ -46,6 +52,9 @@ public class CmdHandler implements TabExecutor {
                     else sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
                 }
                 else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
+                break;
+            case "연구":
+                StudyHandler.Command(sender, args);
         }
         return false;
     }
@@ -56,7 +65,7 @@ public class CmdHandler implements TabExecutor {
             case "팀":
                 return TeamHandler.TabExcutor(sender, args);
             case "타이머":
-                break;
+                return TimerHandler.TabExcutor(sender, args);
         }
         return null;
     }
