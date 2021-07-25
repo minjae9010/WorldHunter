@@ -1,8 +1,14 @@
 package tk.mjsv.EventHanler;
 
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.EnchantingTable;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -35,6 +41,19 @@ public class EventH implements Listener {
             Timer.hm.put(e.getEntity(), 100);
             e.getEntity().removePotionEffect(PotionEffectType.BLINDNESS);
             e.getEntity().removePotionEffect(PotionEffectType.SLOW);
+        }
+    }
+    public void onPlayerItrrute(PlayerInteractEvent e){
+        Action action = e.getAction();
+        Player player = e.getPlayer();
+
+        if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
+            Block block = e.getClickedBlock();
+            if(block.getType().equals(Material.ENCHANTING_TABLE)){
+               if(!player.isOp()){
+                   e.setCancelled(true);
+               }
+            }
         }
     }
 }

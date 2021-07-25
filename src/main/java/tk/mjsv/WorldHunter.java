@@ -6,10 +6,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.mjsv.CmdHandler.CmdHandler;
 import tk.mjsv.CmdHandler.StudyHandler;
-import tk.mjsv.CmdHandler.TimerHandler;
 import tk.mjsv.EventHanler.EventH;
-import tk.mjsv.TimerHandler.Timer;
-import tk.mjsv.TimerHandler.TimerData;
+import tk.mjsv.recipes.RecipeFrunce;
 
 import java.util.Objects;
 
@@ -26,7 +24,7 @@ public final class WorldHunter extends JavaPlugin {
         YAML.loadData();
         Bukkit.getPluginManager().registerEvents(new EventH(),this);
         Bukkit.getPluginManager().registerEvents(new StudyHandler(),this);
-
+        RecipeFrunce.enableFurnceRecipe(getServer());
 
     }
 

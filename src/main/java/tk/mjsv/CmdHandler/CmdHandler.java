@@ -36,7 +36,7 @@ public class CmdHandler implements TabExecutor {
                 WorldHandler.Command(sender, args);
                 break;
             case "공지":
-                if (sender.isOp()) Bukkit.broadcastMessage(index + args[0]);
+                if (sender.isOp()) Bukkit.broadcastMessage(index + String.valueOf(args));
                 else sender.sendMessage(index + "권한이 부족합니다.");
                 break;
             case "남은시간":
