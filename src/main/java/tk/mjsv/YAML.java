@@ -7,11 +7,11 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 public class YAML {
     public static FileConfiguration teamData;
@@ -19,104 +19,262 @@ public class YAML {
     private static final File team = new File("GameData/teamData.yml");
     private static final File Chunk = new File("GameData/ChunkData.yml");
     public static HashMap<String, ArrayList<OfflinePlayer>> teamHash = new HashMap<>();
-    public static List<String> teamList= new ArrayList<>();
-    public static HashMap<String,OfflinePlayer> teamOwner = new HashMap<>();
+    public static List<String> teamList = new ArrayList<>();
+    public static HashMap<String, OfflinePlayer> teamOwner = new HashMap<>();
     public static List<String> ChunkList = new ArrayList<>();
 
-    public static void loadData(){
+    public static String loadData() {
         teamData = YamlConfiguration.loadConfiguration(team);
-        ChunkData = YamlConfiguration.loadConfiguration(Chunk);
+        StringBuilder str = new StringBuilder();
         try {
             if (!team.exists()) {
                 teamData.save(team);
-                teamData.load(team);
-
-
-            } else {
-                teamList = teamData.getStringList("teamlist");
-                for (String tl : teamList) {
-                    ArrayList<OfflinePlayer> sl = teamHash.get(tl);
-                    for (String pl : teamData.getStringList("team."+tl+".Player")) {
-                        sl.add(Bukkit.getOfflinePlayerIfCached(pl));
-                    }
-                    teamHash.put(tl, sl);
-                    teamOwner.put(tl, Bukkit.getOfflinePlayerIfCached(teamData.getString(tl+"Owner")));
-                }
             }
-            if(!Chunk.exists()){
-                ChunkData.save(Chunk);
-                ChunkData.load(Chunk);
-            }else{
-                ChunkList = ChunkData.getStringList("finishBuy");
+            int nBuffer;
+
+            BufferedReader br = new BufferedReader(new FileReader(team));
+            while ((nBuffer = br.read()) != -1) {
+                str.append((char) nBuffer);
             }
-        } catch (InvalidConfigurationException|IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static void saveData(){
-        teamData.set("teamlist",teamList);
-        for (String s:teamList){
-            teamData.set("team."+s+".Player",teamHash.get(s));
-        }
-        try {
-            teamData.save(team);
+            br.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return str.toString();
     }
-    public static ArrayList<OfflinePlayer> getTeamList(String s){
+
+    public static ArrayList<OfflinePlayer> getTeamList(String s) {
         ArrayList<OfflinePlayer> tl;
-        if(teamHash.containsKey(s)) {
+        if (teamHash.containsKey(s)) {
             tl = teamHash.get(s);
             return tl;
-        }
-        else{
+        } else {
             return null;
         }
     }
-    public static String getPlayerTeam(Player p){
-        String team = null;
-        for(String tl:teamList){
-            ArrayList<OfflinePlayer> pl = teamHash.get(tl);
-            if(pl.contains(p)){
-                team = tl;
+
+    public static String getPlayerTeam(Player p) throws IOException {
+        String playerTeam;
+
+        String sLine;
+
+        BufferedReader br = new BufferedReader(new FileReader(team));
+        while ((sLine = br.readLine()) != null) {
+            if (sLine.contains(p.getUniqueId().toString())) {
+                int index = sLine.indexOf(":");
+                playerTeam = sLine.substring(0, index);
+                br.close();
+                return playerTeam;
             }
         }
-        return team;
+        br.close();
+
+        return null;
     }
-    public static void addTeamList(String s,OfflinePlayer p){
-        ArrayList<OfflinePlayer> tl;
-        if(teamHash.containsKey(s)) {
-            tl = teamHash.get(s);
-            tl.add(p);
-            teamHash.put(s,tl);
+
+    public static void addTeamList(String s, OfflinePlayer p, String data, Player sender) throws IOException {
+        if (getPlayerTeam((Player) p) == null) {
+            String sLine;
+
+            BufferedReader br = new BufferedReader(new FileReader(team));
+            while ((sLine = br.readLine()) != null) {
+                if (sLine.contains(s)) {
+                    BufferedWriter bw = new BufferedWriter(new FileWriter(team));
+                    int tmpIndex = sLine.indexOf("{");
+                    String tmp1 = sLine.substring(0, tmpIndex);
+                    String tmp2 = sLine.substring(tmpIndex + 1);
+                    if (tmp2.contains(",")) {
+                        int commaIndex = tmp2.lastIndexOf(",");
+                        String tmp3 = tmp2.substring(0, commaIndex + 1);
+                        String tmp4 = p.getUniqueId() + ",";
+                        tmp3 += tmp4 + "}";
+                        tmp2 = "{" + tmp3;
+                    } else {
+                        tmp2 = "{" + p.getUniqueId() + ",}";
+                    }
+
+                    tmp1 += tmp2;
+
+                    int index = data.indexOf(s);
+
+                    if (index <= 1) {
+                        String tmp4 = data.substring(index);
+                        int index2 = tmp4.indexOf("\n");
+                        String done;
+                        if (tmp4.substring(index2).length() <= 1) done = tmp1 + "\n";
+                        else done = tmp1 + tmp4.substring(index2);
+                        bw.write(done, 0, done.length());
+                    } else {
+                        String one = data.substring(0, index);
+                        String temp = data.substring(index);
+                        int index2 = temp.indexOf('\n');
+                        String two;
+                        if (temp.substring(index2).length() <= 1) two = "\n";
+                        else two = temp.substring(index2);
+                        String done = one + tmp1 + two;
+                        bw.write(done, 0, done.length());
+                    }
+                    bw.flush();
+                    bw.close();
+                }
+            }
+            sender.sendMessage(WorldHunter.index + p.getName() + "님이 초대 되었습니다.");
+        }
+        sender.sendMessage(WorldHunter.index + p.getName() + "님은 이미 팀에 소속 되어 있습니다.");
+    }
+
+    public static void subTeamList(String s, OfflinePlayer p, String data) throws IOException {
+        String sLine;
+
+        BufferedReader br = new BufferedReader(new FileReader(team));
+        while ((sLine = br.readLine()) != null) {
+            if (sLine.contains(s)) {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(team));
+                String tmp1 = sLine.replace(p.getUniqueId() + ",", "");
+
+                int index = data.indexOf(s);
+
+                if (index <= 1) {
+                    String tmp4 = data.substring(index);
+                    int index2 = tmp4.indexOf("\n");
+                    String done;
+                    if (tmp4.substring(index2).length() <= 1) done = tmp1 + "\n";
+                    else done = tmp1 + tmp4.substring(index2);
+                    bw.write(done, 0, done.length());
+                } else {
+                    String one = data.substring(0, index);
+                    String temp = data.substring(index);
+                    int index2 = temp.indexOf('\n');
+                    String two;
+                    if (temp.substring(index2).length() <= 1) two = "\n";
+                    else two = temp.substring(index2);
+                    String done = one + tmp1 + two;
+                    bw.write(done, 0, done.length());
+                }
+                bw.flush();
+                bw.close();
+            }
         }
     }
-    public static void subTeamList(String s,OfflinePlayer p){
-        ArrayList<OfflinePlayer> tl;
-        if(teamHash.containsKey(s)) {
-            tl = teamHash.get(s);
-            tl.remove(p);
-            teamHash.put(s,tl);
+
+    public static void createTeam(String s, OfflinePlayer p, String data) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(team));
+        String done = data + s + ":" + p.getUniqueId() + "{}\n";
+        bw.write(done, 0, done.length());
+        bw.flush();
+        bw.close();
+    }
+
+    public static void removeTeam(String s, String data) throws IOException {
+        String sLine;
+
+        BufferedReader br = new BufferedReader(new FileReader(team));
+        while ((sLine = br.readLine()) != null) {
+            if (sLine.contains(s)) {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(team));
+                int index = data.indexOf(s);
+
+                if (index == 0) {
+                    int index2 = data.indexOf("\n");
+                    String done;
+                    if (data.substring(index2).length() <= 1) done = "";
+                    else done = data.substring(index2 + 1);
+                    bw.write(done, 0, done.length());
+                } else {
+                    String one = data.substring(0, index);
+                    String temp = data.substring(0, index + 1);
+                    int index2 = temp.indexOf('\n');
+                    String two;
+                    if (temp.substring(index2).length() <= 1) two = "";
+                    else two = temp.substring(index2);
+                    String done = one + two;
+                    bw.write(done, 0, done.length());
+                }
+                bw.flush();
+                bw.close();
+            }
         }
     }
-    public static void createTeam(String s,OfflinePlayer p){
-        ArrayList<OfflinePlayer> tl= new ArrayList<>();
-        tl.add(p);
-        teamList.add(s);
-        teamHash.put(s,tl);
+
+    public static boolean isValidTeam(String s) throws IOException {
+        String sLine;
+
+        BufferedReader br = new BufferedReader(new FileReader(team));
+        while ((sLine = br.readLine()) != null) {
+            if (sLine.contains(s)) {
+                return true;
+            }
+        }
+        br.close();
+
+        return false;
     }
-    public static void removeTeam(String s){
-        teamHash.remove(s);
-        teamList.remove(s);
-        teamOwner.remove(s);
+
+    public static Player getOwner(String s) throws IOException {
+        Player owner;
+
+        String sLine;
+
+        BufferedReader br = new BufferedReader(new FileReader(team));
+        while ((sLine = br.readLine()) != null) {
+            if (sLine.contains(s)) {
+                int index = sLine.indexOf(":");
+                int index2 = sLine.indexOf("{");
+                owner = Bukkit.getPlayer(UUID.fromString(sLine.substring(index + 1, index2)));
+                br.close();
+                return owner;
+            }
+        }
+        br.close();
+
+        return null;
     }
-    public static OfflinePlayer getOwner(String s){
-        OfflinePlayer p = teamOwner.get(s);
-        return p;
-    }
-    public static void setOwner(String s,OfflinePlayer p){
-        teamOwner.put(s,p);
+
+    public static void setOwner(String s, Player p, String data, Player sender, Player oldOwner) throws IOException {
+        if (oldOwner == p) sender.sendMessage(WorldHunter.index + "해당 플레이어는 이미 팀장입니다.");
+        else {
+            String sLine;
+
+            BufferedReader br = new BufferedReader(new FileReader(team));
+            while ((sLine = br.readLine()) != null) {
+                if (sLine.contains(s)) {
+                    BufferedWriter bw = new BufferedWriter(new FileWriter(team));
+                    int tmpIndex = sLine.indexOf(":");
+                    int tmpIndex2 = sLine.indexOf("{");
+                    String tmp1 = sLine.substring(0, tmpIndex);
+                    tmp1 += p.getUniqueId();
+                    String tmp2 = sLine.substring(tmpIndex2);
+
+                    tmp2 = tmp2.replace(p.getUniqueId() + ",", oldOwner + ",");
+
+                    tmp1 += tmp2;
+
+                    int index = data.indexOf(s);
+
+                    if (index <= 1) {
+                        String tmp4 = data.substring(index);
+                        int index2 = tmp4.indexOf("\n");
+                        String done;
+                        if (tmp4.substring(index2).length() <= 1) done = tmp1 + "\n";
+                        else done = tmp1 + tmp4.substring(index2);
+                        bw.write(done, 0, done.length());
+                    } else {
+                        String one = data.substring(0, index);
+                        String temp = data.substring(index);
+                        int index2 = temp.indexOf('\n');
+                        String two;
+                        if (temp.substring(index2).length() <= 1) two = "\n";
+                        else two = temp.substring(index2);
+                        String done = one + tmp1 + two;
+                        bw.write(done, 0, done.length());
+                    }
+                    bw.flush();
+                    bw.close();
+                }
+            }
+            sender.sendMessage(WorldHunter.index + p.getName() + "님이 새로운 팀장이 되었습니다.");
+        }
     }
 
 }

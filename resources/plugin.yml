@@ -1,0 +1,24 @@
+name: WorldHunter
+version: 0.1
+main: tk.mjsv.WorldHunter
+api-version: 1.17
+authors: [ minjae9010, Luni5 ]
+description: 땅따먹기 플러그인
+commands:
+  팀:
+    description: 팀 명령어
+    permission: WorldHunter.Team
+  타이머:
+    description: 타이머
+  공지:
+    description: 공지 명령어
+  남은시간:
+    description: 타이머 남은시간
+  수분:
+    description: 수분 확인
+#  연구:
+#    description: 연구 명령어
+  땅:
+    description: 땅 명령어
+  지명수배:
+    description: 지명수배 명령어
