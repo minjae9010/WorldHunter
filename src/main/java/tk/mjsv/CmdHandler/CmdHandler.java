@@ -33,11 +33,11 @@ public class CmdHandler implements TabExecutor {
                 TimerHandler.Command(sender, args);
                 break;
             case "땅":
-                try {
-                    WorldHandler.Command(sender, args);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                WorldHandler.Command(sender, args);
+                break;
+            case "공지":
+                if (sender.isOp()) Bukkit.broadcastMessage(index + String.valueOf(args));
+                else sender.sendMessage(index + "권한이 부족합니다.");
                 break;
             case "남은시간":
                 if (Timer.set)
@@ -53,12 +53,8 @@ public class CmdHandler implements TabExecutor {
                 }
                 else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
                 break;
-//            case "연구":
-//                StudyHandler.Command(sender, args);
-//                break;
-            case "지명수배": {
-                if(sender.isOp()) WantedHandler.Command(sender, args);
-            }
+            case "연구":
+                StudyHandler.Command(sender, args);
         }
         return false;
     }

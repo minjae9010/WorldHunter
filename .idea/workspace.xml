@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="WorldHunter-0.1" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/LeftCick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/RightClick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/recipes/RecipeFrunce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +51,11 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="WorldHunter" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -85,17 +83,34 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fuckingjava" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\worldhunter" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Gradle.WorldHunter [jar]">
+  <component name="RunManager" selected="Gradle.WorldHunter [build]">
+    <configuration name="WorldHunter [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--scan" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="WorldHunter [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -138,36 +153,18 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="worldhunter [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="testClasses" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.WorldHunter [jar]" />
-        <item itemvalue="Gradle.worldhunter [testClasses]" />
+        <item itemvalue="Gradle.WorldHunter [build]" />
         <item itemvalue="Gradle.worldhunter [jar]" />
+        <item itemvalue="Gradle.WorldHunter [jar]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\minjae\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="" />
@@ -197,28 +194,77 @@
       <option name="project" value="LOCAL" />
       <updated>1624679836398</updated>
     </task>
-    <task id="LOCAL-00004" summary="타이머 다시시작 기능 추가&#10;타이머 남은시간 보기 추가&#10;타이머 시간 추가 기능 추가&#10;공지 명령어 추가&#10;plugin.yml 파일 위치 변경&#10;plugin.yml api-version을 1.17로 변경">
-      <created>1626699569012</created>
+    <task id="LOCAL-00004" summary="gradle insert 안되서 yml 만 변경">
+      <created>1624719654548</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1626699569012</updated>
+      <updated>1624719654548</updated>
     </task>
-    <task id="LOCAL-00005" summary="수분 시스템 추가&#10;남은 시간 확인 기능 추가">
-      <created>1626753876166</created>
+    <task id="LOCAL-00005" summary="gradle resource filter 고쳤다 ...">
+      <created>1624721262948</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1626753876166</updated>
+      <updated>1624721262948</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="땅관련 커맨드 class 추가">
+      <created>1624880922186</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624880922187</updated>
+    </task>
+    <task id="LOCAL-00007" summary="땅관련 커맨드 시스템 천천히 추가중">
+      <created>1624881490091</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624881490091</updated>
+    </task>
+    <task id="LOCAL-00008" summary="팀시스템 전체적으로 변경중">
+      <created>1625391868018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625391868018</updated>
+    </task>
+    <task id="LOCAL-00009" summary="yaml 팀 매소드 변경">
+      <created>1625445495404</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625445495404</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="타이머 추가" />
     <MESSAGE value="타이머 추가2" />
-    <MESSAGE value="타이머 다시시작 기능 추가&#10;타이머 남은시간 보기 추가&#10;타이머 시간 추가 기능 추가&#10;공지 명령어 추가&#10;plugin.yml 파일 위치 변경&#10;plugin.yml api-version을 1.17로 변경" />
-    <MESSAGE value="수분 시스템 추가&#10;남은 시간 확인 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="수분 시스템 추가&#10;남은 시간 확인 기능 추가" />
+    <MESSAGE value="gradle insert 안되서 yml 만 변경" />
+    <MESSAGE value="gradle resource filter 고쳤다 ..." />
+    <MESSAGE value="땅관련 커맨드 class 추가" />
+    <MESSAGE value="땅관련 커맨드 시스템 천천히 추가중" />
+    <MESSAGE value="팀시스템 전체적으로 변경중" />
+    <MESSAGE value="yaml 팀 매소드 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="yaml 팀 매소드 변경" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
