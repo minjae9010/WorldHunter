@@ -23,7 +23,7 @@ public final class WorldHunter extends JavaPlugin {
         });
         YAML.loadData();
         Bukkit.getPluginManager().registerEvents(new EventH(),this);
-        Bukkit.getPluginManager().registerEvents(new StudyHandler(),this);
+//        Bukkit.getPluginManager().registerEvents(new StudyHandler(),this);
         RecipeFrunce.enableFurnceRecipe(getServer());
 
     }

@@ -13,10 +13,14 @@ public class Timer implements Runnable {
     private static final String index = WorldHunter.index;
     public static int count = -1;
     public static int water = 0;
-    public static HashMap<Player, Integer> hm = new HashMap<>();
+    public static HashMap<Player, Integer> playerWater = new HashMap<>();
     private static String str;
     public static boolean set = false;
     public static String setting = "없음";
+
+    public static HashMap<Player, Boolean> wanted = new HashMap<>();
+    public static HashMap<Player, Integer> wantedTime = new HashMap<>();
+    public static HashMap<Player, Integer> kills = new HashMap<>();
 
 
     @Override
@@ -84,12 +88,22 @@ public class Timer implements Runnable {
         }
         count--;
         water++;
+
+        for (Player player : wanted.keySet()) {
+            if (!wanted.getOrDefault(player, false)) continue;
+            wantedTime.put(player, wantedTime.get(player) - 1);
+            if (wantedTime.get(player) <= 0) {
+                wanted.put(player, false);
+                player.sendMessage(index + "당신의 지명수배가 해제 되었습니다.");
+            }
+        }
+
         switch (setting) {
             case "평화":
                 new TimerData().updateData(Integer.toString(count), Integer.toString(TimerHandler.Wseconds));
                 if (water >= 60) {
                     for (Player player : Bukkit.getOnlinePlayers()) {
-                        if (hm.getOrDefault(player, 100) != 0) hm.put(player, hm.getOrDefault(player, 100) - 1);
+                        if (playerWater.getOrDefault(player, 100) != 0) playerWater.put(player, playerWater.getOrDefault(player, 100) - 1);
                     }
                     water = 0;
                 }
@@ -98,18 +112,19 @@ public class Timer implements Runnable {
                 new TimerData().updateData("0", Integer.toString(count));
                 if (water >= 120) {
                     for (Player player : Bukkit.getOnlinePlayers()) {
-                        if (hm.getOrDefault(player, 100) != 0) hm.put(player, hm.getOrDefault(player, 100) - 1);
+                        if (playerWater.getOrDefault(player, 100) != 0) playerWater.put(player, playerWater.getOrDefault(player, 100) - 1);
                     }
                     water = 0;
                 }
         }
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (hm.getOrDefault(player, 100) <= 30)
+            if (playerWater.getOrDefault(player, 100) <= 30)
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 32767, 1));
-            if (hm.getOrDefault(player, 100) <= 15)
+            if (playerWater.getOrDefault(player, 100) <= 15)
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 32767, 1));
-            if (hm.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 >= 0) player.damage(5.0);
-            else if (hm.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 < 0) player.damage(player.getHealth());
+            if (playerWater.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 >= 0) player.damage(5.0);
+            else if (playerWater.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 < 0)
+                player.damage(player.getHealth());
         }
     }
 }
