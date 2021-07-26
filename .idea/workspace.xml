@@ -5,17 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/LeftCick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/RightClick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/recipes/RecipeFrunce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WorldHunter_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/WorldHunter_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/WorldHunter.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/WorldHunter.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/LeftCick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/LeftCick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/RightClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/RightClick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/StudyHandler/StudyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/StudyHandler/StudyData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/TimerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/TimerData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/recipes/RecipeFrunce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/recipes/RecipeFrunce.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
