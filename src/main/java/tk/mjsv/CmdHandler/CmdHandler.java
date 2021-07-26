@@ -36,8 +36,11 @@ public class CmdHandler implements TabExecutor {
                 WorldHandler.Command(sender, args);
                 break;
             case "공지":
-                if (sender.isOp()) Bukkit.broadcastMessage(index + String.valueOf(args));
-                else sender.sendMessage(index + "권한이 부족합니다.");
+                if (sender.isOp()) {
+                    StringBuilder sb = new StringBuilder();
+                    for (String str : args) sb.append(str).append(" ");
+                    Bukkit.broadcastMessage(index + sb);
+                } else sender.sendMessage(index + "권한이 부족합니다.");
                 break;
             case "남은시간":
                 if (Timer.set)
@@ -46,15 +49,21 @@ public class CmdHandler implements TabExecutor {
                 break;
             case "수분":
                 if (Timer.set) {
-                    if (Timer.hm.getOrDefault((Player) sender, 100) > 80) sender.sendMessage(index + ChatColor.DARK_GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 50) sender.sendMessage(index + ChatColor.GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 30) sender.sendMessage(index + ChatColor.YELLOW + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                }
-                else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
+                    if (Timer.playerWater.getOrDefault((Player) sender, 100) > 80)
+                        sender.sendMessage(index + ChatColor.DARK_GREEN + sender.getName() + "님의 수분: " + Timer.playerWater.getOrDefault((Player) sender, 100) + "%");
+                    else if (Timer.playerWater.getOrDefault((Player) sender, 100) > 50)
+                        sender.sendMessage(index + ChatColor.GREEN + sender.getName() + "님의 수분: " + Timer.playerWater.getOrDefault((Player) sender, 100) + "%");
+                    else if (Timer.playerWater.getOrDefault((Player) sender, 100) > 30)
+                        sender.sendMessage(index + ChatColor.YELLOW + sender.getName() + "님의 수분: " + Timer.playerWater.getOrDefault((Player) sender, 100) + "%");
+                    else
+                        sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.playerWater.getOrDefault((Player) sender, 100) + "%");
+                } else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
                 break;
-            case "연구":
-                StudyHandler.Command(sender, args);
+//            case "연구":
+//                StudyHandler.Command(sender, args);
+            case "지명수배":
+                WantedHandler.Command(sender, args);
+                break;
         }
         return false;
     }

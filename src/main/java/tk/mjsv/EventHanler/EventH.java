@@ -11,6 +11,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
@@ -27,9 +28,14 @@ public class EventH implements Listener {
     }
 
     @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent e) {
+        e.setQuitMessage(index + e.getPlayer().getName() + "님이 WorldHunter에 퇴장하셨습니다");
+    }
+
+    @EventHandler
     public void onPlayerDrink(PlayerItemConsumeEvent e) {
         if (((PotionMeta) (e.getItem().getItemMeta())).getBasePotionData().getType() == PotionType.WATER) {
-            Timer.hm.put(e.getPlayer(), 100);
+            Timer.playerWater.put(e.getPlayer(), 100);
             e.getPlayer().removePotionEffect(PotionEffectType.BLINDNESS);
             e.getPlayer().removePotionEffect(PotionEffectType.SLOW);
         }
@@ -38,11 +44,13 @@ public class EventH implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
         if (Timer.set) {
-            Timer.hm.put(e.getEntity(), 100);
+            Timer.playerWater.put(e.getEntity(), 100);
             e.getEntity().removePotionEffect(PotionEffectType.BLINDNESS);
             e.getEntity().removePotionEffect(PotionEffectType.SLOW);
         }
     }
+
+    @EventHandler
     public void onPlayerItrrute(PlayerInteractEvent e){
         Action action = e.getAction();
         Player player = e.getPlayer();
