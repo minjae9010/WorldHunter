@@ -18,6 +18,10 @@ public class Timer implements Runnable {
     public static boolean set = false;
     public static String setting = "없음";
 
+    public static HashMap<Player, Boolean> wanted = new HashMap<>();
+    public static HashMap<Player, Integer> wantedTime = new HashMap<>();
+    public static HashMap<Player, Integer> kills = new HashMap<>();
+
 
     @Override
     public void run() {
@@ -84,6 +88,16 @@ public class Timer implements Runnable {
         }
         count--;
         water++;
+
+        for (Player player : wanted.keySet()) {
+            if (!wanted.getOrDefault(player, false)) continue;
+            wantedTime.put(player, wantedTime.get(player) - 1);
+            if (wantedTime.get(player) <= 0) {
+                wanted.put(player, false);
+                player.sendMessage(index + "당신의 지명수배가 해제 되었습니다.");
+            }
+        }
+
         switch (setting) {
             case "평화":
                 new TimerData().updateData(Integer.toString(count), Integer.toString(TimerHandler.Wseconds));
@@ -109,7 +123,8 @@ public class Timer implements Runnable {
             if (hm.getOrDefault(player, 100) <= 15)
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 32767, 1));
             if (hm.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 >= 0) player.damage(5.0);
-            else if (hm.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 < 0) player.damage(player.getHealth());
+            else if (hm.getOrDefault(player, 100) == 0 && player.getHealth() - 5.0 < 0)
+                player.damage(player.getHealth());
         }
     }
 }
