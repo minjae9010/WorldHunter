@@ -44,15 +44,15 @@ public class CmdHandler implements TabExecutor {
                     sender.sendMessage(index + Timer.setting + "시간: " + Timer.count / 60 + "분 " + Timer.count % 60 + "초");
                 else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
                 break;
-            case "수분":
-                if (Timer.set) {
-                    if (Timer.hm.getOrDefault((Player) sender, 100) > 80) sender.sendMessage(index + ChatColor.DARK_GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 50) sender.sendMessage(index + ChatColor.GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 30) sender.sendMessage(index + ChatColor.YELLOW + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                    else sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
-                }
-                else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
-                break;
+//            case "수분":
+//                if (Timer.set) {
+//                    if (Timer.hm.getOrDefault((Player) sender, 100) > 80) sender.sendMessage(index + ChatColor.DARK_GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+//                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 50) sender.sendMessage(index + ChatColor.GREEN + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+//                    else if (Timer.hm.getOrDefault((Player) sender, 100) > 30) sender.sendMessage(index + ChatColor.YELLOW + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+//                    else sender.sendMessage(index + ChatColor.RED + sender.getName() + "님의 수분: " + Timer.hm.getOrDefault((Player) sender, 100) + "%");
+//                }
+//                else sender.sendMessage(index + "게임이 시작되지 않았습니다.");
+//                break;
             case "연구":
                 StudyHandler.Command(sender, args);
         }

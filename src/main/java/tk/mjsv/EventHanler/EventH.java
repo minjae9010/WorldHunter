@@ -1,9 +1,6 @@
 package tk.mjsv.EventHanler;
 
-import co.aikar.util.LoadingMap;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.block.EnchantingTable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,9 +15,6 @@ import org.bukkit.potion.PotionType;
 import tk.mjsv.TimerHandler.Timer;
 import tk.mjsv.WorldHunter;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class EventH implements Listener {
     private static final String index = WorldHunter.index;
 
@@ -30,23 +24,23 @@ public class EventH implements Listener {
 //        e.joinMessage(Component.text(index+" "+e.getPlayer().getName()+"님이 WorldHunter에 접속하셨습니다"));
     }
 
-    @EventHandler
-    public void onPlayerDrink(PlayerItemConsumeEvent e) {
-        if (((PotionMeta) (e.getItem().getItemMeta())).getBasePotionData().getType() == PotionType.WATER) {
-            Timer.hm.put(e.getPlayer(), 100);
-            e.getPlayer().removePotionEffect(PotionEffectType.BLINDNESS);
-            e.getPlayer().removePotionEffect(PotionEffectType.SLOW);
-        }
-    }
-
-    @EventHandler
-    public void onPlayerDeath(PlayerDeathEvent e) {
-        if (Timer.set) {
-            Timer.hm.put(e.getEntity(), 100);
-            e.getEntity().removePotionEffect(PotionEffectType.BLINDNESS);
-            e.getEntity().removePotionEffect(PotionEffectType.SLOW);
-        }
-    }
+//    @EventHandler
+//    public void onPlayerDrink(PlayerItemConsumeEvent e) {
+//        if (((PotionMeta) (e.getItem().getItemMeta())).getBasePotionData().getType() == PotionType.WATER) {
+//            Timer.hm.put(e.getPlayer(), 100);
+//            e.getPlayer().removePotionEffect(PotionEffectType.BLINDNESS);
+//            e.getPlayer().removePotionEffect(PotionEffectType.SLOW);
+//        }
+//    }
+//
+//    @EventHandler
+//    public void onPlayerDeath(PlayerDeathEvent e) {
+//        if (Timer.set) {
+//            Timer.hm.put(e.getEntity(), 100);
+//            e.getEntity().removePotionEffect(PotionEffectType.BLINDNESS);
+//            e.getEntity().removePotionEffect(PotionEffectType.SLOW);
+//        }
+//    }
     @EventHandler
     public void onPlayerItrrute(PlayerInteractEvent e){
         Action action = e.getAction();

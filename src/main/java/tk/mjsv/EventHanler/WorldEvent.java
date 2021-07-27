@@ -1,19 +1,20 @@
-package tk.mjsv.WorldEvent;
+package tk.mjsv.EventHanler;
 
-import org.bukkit.event.Listener;
+import org.bukkit.Chunk;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.ChunkEvent
+import org.bukkit.event.Listener;
 import org.bukkit.entity.Player;
-
+import org.bukkit.event.server.BroadcastMessageEvent;
+import org.bukkit.event.world.ChunkEvent;
 
 
 public class WorldEvent implements Listener {
 
     @EventHandler
-    public void onChunk(ChunkEvent event) {
-        Player player = event.getPlayer();
-        if (player.getChunk().isNull()) {
-            player.sendMessage("중립지역 입니다.");
+    public void onChunk(ChunkEvent e) {
+        Chunk chunk = e.getChunk();
+        if (chunk.equals(null)) {
+            String s = "중립지역 입니다.";
         }
     }
 

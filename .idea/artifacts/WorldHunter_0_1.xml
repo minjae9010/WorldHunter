@@ -3,7 +3,7 @@
     <output-path>$USER_HOME$/Downloads/1.17 서버/plugins</output-path>
     <root id="archive" name="WorldHunter-0.1.jar">
       <element id="module-output" name="WorldHunter.main" />
-      <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
     </root>
   </artifact>
 </component>
