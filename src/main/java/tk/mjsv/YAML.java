@@ -2,7 +2,6 @@ package tk.mjsv;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 
 import java.io.*;
 import java.util.List;

@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.mjsv.CmdHandler.CmdHandler;
-import tk.mjsv.CmdHandler.StudyHandler;
 import tk.mjsv.EventHanler.EventH;
 import tk.mjsv.recipes.RecipeFrunce;
 
