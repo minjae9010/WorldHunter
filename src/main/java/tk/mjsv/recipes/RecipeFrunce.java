@@ -17,7 +17,7 @@ public class RecipeFrunce {
         return IronOrepice;
     }
     private static FurnaceRecipe GoldOre(){
-        ItemStack result = new ItemStack(Material.GOLD_NUGGET);
+        ItemStack result = new ItemStack(Material.GOLD_NUGGET,2);
         FurnaceRecipe recipe = new FurnaceRecipe(result,Material.RAW_GOLD);
         recipe.setExperience(1);
         return recipe;

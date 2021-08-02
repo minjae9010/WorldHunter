@@ -1,18 +1,20 @@
 package tk.mjsv.CmdHandler;
 
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tk.mjsv.TimerHandler.Timer;
 import tk.mjsv.WorldHunter;
-
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class CmdHandler implements TabExecutor {
@@ -23,11 +25,7 @@ public class CmdHandler implements TabExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         switch (label) {
             case "팀":
-                try {
-                    TeamHandler.Command(sender, args);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                TeamHandler.Command(sender, args);
                 break;
             case "타이머":
                 TimerHandler.Command(sender, args);
@@ -55,6 +53,60 @@ public class CmdHandler implements TabExecutor {
 //                break;
             case "연구":
                 StudyHandler.Command(sender, args);
+                break;
+            case "초대":
+                if (args.length==1){
+                    Player p = (Player) sender;
+                    Inventory i = p.getInventory();
+                    ItemStack gold = new ItemStack(Material.GOLD_INGOT);
+                    ItemStack dia = new ItemStack(Material.DIAMOND);
+                    ItemStack eme = new ItemStack(Material.EMERALD);
+                    boolean check = false;
+                    if(i.contains(Material.GOLD_INGOT,20)&i.contains(Material.EMERALD,1)){
+                        gold.setAmount(20);
+                        eme.setAmount(1);
+                        i.removeItem(gold);
+                        i.removeItem(eme);
+                        check = true;
+                    }else if(i.contains(Material.GOLD_INGOT,32)&i.contains(Material.DIAMOND,5)){
+                        gold.setAmount(32);
+                        dia.setAmount(5);
+                        i.removeItem(gold);
+                        i.removeItem(dia);
+                        check = true;
+                    }
+                    if(check){
+                        OfflinePlayer op = Bukkit.getOfflinePlayer(args[0]);
+                        op.setWhitelisted(true);
+                        Bukkit.broadcastMessage(index+" "+sender.getName()+"님꼐서 "+args[0]+"님은 WorldHunts에 초대하셨습니다");
+                    }
+                    else sender.sendMessage(index+" 초대하기 위한 재료가 모자랍니다(금20+에메랄드,금32+다이아5)");
+                }
+                break;
+            case "부여":
+                Player p = (Player)sender;
+                ItemStack Is =p.getInventory().getItemInMainHand();
+                ItemMeta Im = Is.getItemMeta();
+                Material Ims = Is.getType();
+                if(!Im.hasEnchants()) {
+                    switch (Ims) {
+                        case STONE_PICKAXE:
+                        case STONE_AXE:
+                        case STONE_SHOVEL:
+                        case GOLDEN_PICKAXE:
+                        case GOLDEN_AXE:
+                        case STONE_SWORD:
+                        case WOODEN_AXE:
+                        case WOODEN_PICKAXE:
+                            Im.displayName(Component.text(index+" "+Ims.name().replace("_"," ")));
+                            sender.sendMessage(Im.getLocalizedName());
+                            Is.setItemMeta(Im);
+                        default:
+                            sender.sendMessage(index+"부여가 불가능한 아이템 입니다");
+                    }
+                }else{
+                    sender.sendMessage(index,"인첸트가된 아이템은 부여가 불가능합니다");
+                }
         }
         return false;
     }

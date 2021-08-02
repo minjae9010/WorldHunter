@@ -21,6 +21,7 @@ public class Timer implements Runnable {
     public static HashMap<Player, Boolean> wanted = new HashMap<>();
     public static HashMap<Player, Integer> wantedTime = new HashMap<>();
     public static HashMap<Player, Integer> kills = new HashMap<>();
+    public static HashMap<Player, Integer> PvpTime = new HashMap<>();
 
 
     @Override
@@ -95,6 +96,13 @@ public class Timer implements Runnable {
             if (wantedTime.get(player) <= 0) {
                 wanted.put(player, false);
                 player.sendMessage(index + "당신의 지명수배가 해제 되었습니다.");
+            }
+        }
+        for (Player player : PvpTime.keySet()) {
+            PvpTime.put(player, wantedTime.get(player) - 1);
+            if (PvpTime.get(player) <= 0) {
+                wanted.remove(player);
+                player.sendMessage(index + "이제부터 명령어를 사용하실 수 있습니다.");
             }
         }
 

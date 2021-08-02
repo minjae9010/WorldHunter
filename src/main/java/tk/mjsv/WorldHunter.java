@@ -30,6 +30,6 @@ public final class WorldHunter extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        YAML.saveData();
     }
 }

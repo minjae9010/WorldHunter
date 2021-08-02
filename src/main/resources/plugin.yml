@@ -7,7 +7,6 @@ description: 땅따먹기 플러그인
 commands:
   팀:
     description: 팀 명령어
-    permission: WorldHunter.Team
   타이머:
     description: 타이머
   공지:
@@ -22,3 +21,7 @@ commands:
     description: 땅 명령어
   지명수배:
     description: 지명수배 명령어
+  초대:
+    description: 화이트리스트
+  부여:
+    description: 아이템 이름부여
