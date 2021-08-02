@@ -96,8 +96,13 @@ public class TeamHandler {
 
     public static List<String> TabExcutor(CommandSender sender, String[] args) {
         if (args.length == 0) {
-            if (sender.hasPermission("WorldHunter.MakeTeam"))
-                return Arrays.asList("생성", "삭제");
+            return Arrays.asList("생성", "삭제","목록","초대","추방");
+        }
+        if (args.length == 1){
+            switch(args[0]){
+                case "목록":
+                    return YAML.getTeamList();
+            }
         }
         return null;
     }
