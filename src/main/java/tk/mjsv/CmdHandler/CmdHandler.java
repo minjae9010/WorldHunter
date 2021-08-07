@@ -98,9 +98,12 @@ public class CmdHandler implements TabExecutor {
                         case STONE_SWORD:
                         case WOODEN_AXE:
                         case WOODEN_PICKAXE:
+                        case IRON_PICKAXE:
                             Im.displayName(Component.text(index+" "+Ims.name().replace("_"," ")));
                             sender.sendMessage(Im.getLocalizedName());
                             Is.setItemMeta(Im);
+                            sender.sendMessage(index+"부여가 완료되었습니다");
+                            break;
                         default:
                             sender.sendMessage(index+"부여가 불가능한 아이템 입니다");
                     }
@@ -113,12 +116,15 @@ public class CmdHandler implements TabExecutor {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
+        List<String> returnList = null;
         switch (alias) {
             case "팀":
-                return TeamHandler.TabExcutor(sender, args);
+                returnList = TeamHandler.TabExcutor(sender,args);
+                break;
             case "타이머":
-                return TimerHandler.TabExcutor(sender, args);
+                returnList = TimerHandler.TabExcutor(sender, args);
+                break;
         }
-        return null;
+        return returnList;
     }
 }

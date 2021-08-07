@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TimerHandler {
     private static final String index = WorldHunter.index;
-    private static String label = "타이머";
+    private static final String label = "타이머";
     public static WorldHunter pl = WorldHunter.getPlugin(WorldHunter.class);
 
     public static int seconds = 0;

@@ -1,4 +1,4 @@
-package tk.mjsv.StudyHandler;
+package tk.mjsv.utile;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

@@ -1,4 +1,4 @@
-package tk.mjsv.recipes;
+package tk.mjsv.utile;
 
 import org.bukkit.Material;
 import org.bukkit.Server;

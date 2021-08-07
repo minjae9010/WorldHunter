@@ -1,9 +1,10 @@
-name: WorldHunter
+name: WorldHunts
 version: 0.1
 main: tk.mjsv.WorldHunter
 api-version: 1.17
 authors: [ minjae9010, Luni5 ]
 description: 땅따먹기 플러그인
+depend: [LuckPerms]
 commands:
   팀:
     description: 팀 명령어
