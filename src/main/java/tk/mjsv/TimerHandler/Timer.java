@@ -77,14 +77,14 @@ public class Timer implements Runnable {
                 setting = "전쟁";
             } else if (setting.equals("전쟁")) {
                 set = false;
-                Bukkit.getScheduler().cancelTasks(TimerHandler.pl);
+                Bukkit.getScheduler().cancelTask(TimerHandler.TaskId);
             }
         }
         if (TimerHandler.TimerStop) {
             TimerHandler.TimerStop = false;
             Bukkit.broadcastMessage(index + "관리자가 타이머를 종료 하였습니다");
             Timer.set = false;
-            Bukkit.getScheduler().cancelTasks(TimerHandler.pl);
+            Bukkit.getScheduler().cancelTask(TimerHandler.TaskId);
         }
         count--;
         water++;

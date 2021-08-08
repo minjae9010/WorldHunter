@@ -18,6 +18,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+import tk.mjsv.CmdHandler.TimerHandler;
+import tk.mjsv.CmdHandler.WarHandler;
+import tk.mjsv.CmdHandler.WorldHandler;
 import tk.mjsv.TimerHandler.PvpTime;
 import tk.mjsv.WorldHunter;
 import tk.mjsv.YAML;
@@ -40,24 +43,6 @@ public class EventH implements Listener {
             e.quitMessage(Component.text(index+e.getPlayer().getName()+"님이 pvp중 탈주가 감지되서 사망처리 되었습니다."));
         }else e.quitMessage(Component.text(index+" "+e.getPlayer().getName()+"님이 WorldHunts에 나가셨습니다"));
     }
-
-//    @EventHandler
-//    public void onPlayerDrink(PlayerItemConsumeEvent e) {
-//        if (((PotionMeta) (e.getItem().getItemMeta())).getBasePotionData().getType() == PotionType.WATER) {
-//            Timer.hm.put(e.getPlayer(), 100);
-//            e.getPlayer().removePotionEffect(PotionEffectType.BLINDNESS);
-//            e.getPlayer().removePotionEffect(PotionEffectType.SLOW);
-//        }
-//    }
-//
-//    @EventHandler
-//    public void onPlayerDeath(PlayerDeathEvent e) {
-//        if (Timer.set) {
-//            Timer.hm.put(e.getEntity(), 100);
-//            e.getEntity().removePotionEffect(PotionEffectType.BLINDNESS);
-//            e.getEntity().removePotionEffect(PotionEffectType.SLOW);
-//        }
-//    }
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e){
         Player player = e.getPlayer();
@@ -78,7 +63,7 @@ public class EventH implements Listener {
         if(player.isOp()) {
             if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
                 if (e.getClickedBlock().getChunk().getWorld().getName().equals(YAML.getCenterWorld())) {
-                    if (!(YAML.getLandTeam(e.getClickedBlock().getChunk()) == YAML.getPlayerTeam(e.getPlayer().getName()))) {
+                    if (!YAML.getLandTeam(e.getClickedBlock().getChunk()).equals(YAML.getPlayerTeam(e.getPlayer().getName()))|!WarHandler.pvpList.get(YAML.getLandLoc(e.getClickedBlock().getChunk())).equals(YAML.getPlayerTeam(player.getName()))) {
                         e.setCancelled(true);
                     }
                 }
@@ -89,16 +74,15 @@ public class EventH implements Listener {
     public void onPlayerBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
         ItemStack i = p.getInventory().getItemInMainHand();
-        Material b = e.getBlock().getType();
         if (!p.isOp()){
             if (!i.getType().equals(Material.AIR)) {
                 String s = ((TextComponent)i.getItemMeta().displayName()).content();
-                if (!s.contains(index)|b.equals(Material.DIAMOND_ORE)|b.equals(Material.DEEPSLATE_DIAMOND_ORE)) {
+                if (s==null|!s.contains(index)) {
                     e.setCancelled(true);
                 }
             }
             if (e.getBlock().getChunk().getWorld().getName().equals(YAML.getCenterWorld())) {
-                if (!(YAML.getLandTeam(e.getBlock().getChunk()) == YAML.getPlayerTeam(e.getPlayer().getName()))) {
+                if (!YAML.getLandTeam(e.getBlock().getChunk()).equals(YAML.getPlayerTeam(e.getPlayer().getName()))|!WarHandler.pvpList.get(YAML.getLandLoc(e.getBlock().getChunk())).equals(YAML.getPlayerTeam(p.getName()))) {
                     e.setCancelled(true);
                 }
             }
@@ -169,16 +153,18 @@ public class EventH implements Listener {
         Entity victim = e.getEntity();
         Entity attacker = e.getDamager();
         Player p;
-        if(victim instanceof Player&attacker instanceof Player) {
-            p = (Player) victim;
-            if (!p.isOp()) {
-                if (!PvpTime.PvpTime.containsKey(p)) p.sendMessage(index + "pvp가 감지되었습니다 이제부터 명령어를 사용하지 못하십니다");
-                PvpTime.PvpTime.put(p, 60);
-            }
-            p = (Player) attacker;
-            if(!p.isOp()) {
-                if (!PvpTime.PvpTime.containsKey(p)) p.sendMessage(index + "pvp가 감지되었습니다 이제부터 명령어를 사용하지 못하십니다");
-                PvpTime.PvpTime.put(p, 60);
+        if(TimerHandler.Tset.equals("전쟁")) {
+            if (victim instanceof Player & attacker instanceof Player) {
+                p = (Player) victim;
+                if (!p.isOp()) {
+                    if (!PvpTime.PvpTime.containsKey(p)) p.sendMessage(index + "pvp가 감지되었습니다 이제부터 명령어를 사용하지 못하십니다");
+                    PvpTime.PvpTime.put(p, 60);
+                }
+                p = (Player) attacker;
+                if (!p.isOp()) {
+                    if (!PvpTime.PvpTime.containsKey(p)) p.sendMessage(index + "pvp가 감지되었습니다 이제부터 명령어를 사용하지 못하십니다");
+                    PvpTime.PvpTime.put(p, 60);
+                }
             }
         }
     }
@@ -198,7 +184,11 @@ public class EventH implements Listener {
             String team = YAML.getLandTeam(e.getFrom().getChunk());
             if(YAML.getLandRange(e.getFrom().getChunk())<=1) team = "관리국";
             if(team==null) team = "없음";
-            e.getPlayer().sendActionBar(Component.text("§f[§a현재 청크§f] 위치 : "+YAML.getLandLoc(e.getFrom().getChunk())+"  소유자 : "+team));
+            if(WorldHandler.Gb!=null) {
+                if (WorldHandler.Gb.contains(YAML.getLandLoc(e.getTo().getChunk()))) e.getPlayer().sendActionBar(Component.text("§f[§a현재 청크§f] 위치 : " + YAML.getLandLoc(e.getFrom().getChunk()) + "  그린벨트"));
+                else e.getPlayer().sendActionBar(Component.text("§f[§a현재 청크§f] 위치 : "+YAML.getLandLoc(e.getFrom().getChunk())+"  소유자 : "+team));
+            }
+            else e.getPlayer().sendActionBar(Component.text("§f[§a현재 청크§f] 위치 : "+YAML.getLandLoc(e.getFrom().getChunk())+"  소유자 : "+team));
             if(YAML.getLandRange(e.getTo().getChunk())<=1){
                 if(PvpTime.PvpTime.containsKey(e.getPlayer().getName())){
                     e.getPlayer().sendMessage(index+"pvp모드중에는 관리국에 들아가실수 없습니다");

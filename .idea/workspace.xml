@@ -5,34 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/WorldHunter.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/WorldHunts.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/LuckPermsConnetor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/PvpTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/utile/ChunkLoc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/WorldHunter.main.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WarHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/warTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/StudyHandler/StudyData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/utile/StudyData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/WorldEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/LuckPermsConnetor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/LuckPermsConnetor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/recipes/RecipeFrunce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/utile/RecipeFrunce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +105,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -121,6 +113,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.WorldHunter [build]">
+    <configuration name="WorldHunter [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="WorldHunter [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,6 +200,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.WorldHunter [build]" />
+        <item itemvalue="Gradle.WorldHunter [buildDependents]" />
         <item itemvalue="Gradle.worldhunter [jar]" />
         <item itemvalue="Gradle.WorldHunter [jar]" />
       </list>
@@ -302,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627880161874</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="팀 시스템까지완성 (관리 명령어 제외)">
+      <created>1628323934289</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628323934289</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +353,8 @@
     <MESSAGE value="8-2 업데이트" />
     <MESSAGE value="8-02 업뎃" />
     <MESSAGE value="team 명령어 tab시 보기 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="team 명령어 tab시 보기 추가" />
+    <MESSAGE value="팀 시스템까지완성 (관리 명령어 제외)" />
+    <option name="LAST_COMMIT_MESSAGE" value="팀 시스템까지완성 (관리 명령어 제외)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

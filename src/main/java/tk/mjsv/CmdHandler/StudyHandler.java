@@ -1,5 +1,6 @@
 package tk.mjsv.CmdHandler;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -23,10 +24,10 @@ public class StudyHandler implements Listener {
 
     public static void Command(CommandSender sender, String[] args) {
         Player p = (Player) sender;
-        main = Bukkit.createInventory(null, 27, "연구");
-        iron = Bukkit.createInventory(null, 27, "철광석 연구");
-        gold = Bukkit.createInventory(null, 27, "금광석 연구");
-        diamond = Bukkit.createInventory(null, 27, "다이아몬드 원석 연구");
+        main = Bukkit.createInventory(null, 27, Component.text("연구"));
+        iron = Bukkit.createInventory(null, 27, Component.text("철광석 연구"));
+        gold = Bukkit.createInventory(null, 27, Component.text("금광석 연구"));
+        diamond = Bukkit.createInventory(null, 27, Component.text("다이아몬드 연구"));
 
         main.setItem(11, new ItemStack(Material.IRON_ORE));
         main.setItem(13, new ItemStack(Material.GOLD_ORE));

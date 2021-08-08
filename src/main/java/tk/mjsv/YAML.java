@@ -64,6 +64,13 @@ public class YAML {
             teamData.set("team.list",tl);
             teamData.set("team."+team+".owner",null);
             teamData.set("team."+team+".player",null);
+            teamData.set("team."+team+".prefix",null);
+            ChunkData.set("land.team."+team+".land",null);
+            ChunkData.set("land.team."+team+".spawn.x",null);
+            ChunkData.set("land.team."+team+".spawn.y",null);
+            ChunkData.set("land.team."+team+".spawn.z",null);
+            ChunkData.set("land.team."+team+".spawn.yaw",null);
+            ChunkData.set("land.team."+team+".spawn.pitch",null);
             return true;
         }else return false;
     }
@@ -184,6 +191,22 @@ public class YAML {
                 List<String> tl = getTeamLand(team);
                 tl.add(loc);
                 ChunkData.set("land.team."+team+".land",tl);
+                returnBoolean = true;
+            }
+        }
+        saveData();
+        return returnBoolean;
+    }
+    public static boolean subLandTeam(Chunk c){
+        ChunkLoc land = getLandLoc(c);
+        String loc = land.toString();
+        String team = getLandTeam(c);
+        boolean returnBoolean=false;
+        if(getLandTeam(c)!=null){
+            if(getTeamList().contains(team)){
+                List<String> tl = getTeamLand(team);
+                tl.remove(loc);
+                ChunkData.set("land.team."+getLandTeam(c)+".land",tl);
                 returnBoolean = true;
             }
         }

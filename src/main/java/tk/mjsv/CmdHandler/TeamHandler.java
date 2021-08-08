@@ -108,10 +108,11 @@ public class TeamHandler {
             returnList = List.of("생성", "삭제","목록","초대","추방","접두사");
         }
         if (args.length == 2){
-            switch(args[0]){
-                case "목록":
-                    returnList = YAML.getTeamList();
-            }
+            returnList = switch (args[0]) {
+                case "목록", "설정" -> YAML.getTeamList();
+                case "추방" -> YAML.getPlayerList(YAML.getPlayerTeam(sender.getName()));
+                default -> returnList;
+            };
         }
         return returnList;
     }

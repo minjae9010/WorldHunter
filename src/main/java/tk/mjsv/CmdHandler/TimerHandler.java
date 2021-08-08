@@ -1,5 +1,6 @@
 package tk.mjsv.CmdHandler;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import tk.mjsv.TimerHandler.Timer;
@@ -13,7 +14,7 @@ public class TimerHandler {
     private static final String index = WorldHunter.index;
     private static final String label = "타이머";
     public static WorldHunter pl = WorldHunter.getPlugin(WorldHunter.class);
-
+    public static int TaskId;
     public static int seconds = 0;
     public static int Pseconds = 0;
     public static int Wseconds = 0;
@@ -33,7 +34,7 @@ public class TimerHandler {
                         } else {
                             new TimerData().updateData(Integer.toString(Pseconds), Integer.toString(Wseconds));
                             sender.sendMessage(index + "타이머가 시작됩니다");
-                            Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
+                            TaskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
                         }
                     } else {
                         if (Pseconds == 0) {
@@ -64,7 +65,7 @@ public class TimerHandler {
                         Pseconds = Integer.parseInt(new TimerData().loadData().substring(0, new TimerData().loadData().indexOf("|")));
                         Wseconds = Integer.parseInt(new TimerData().loadData().substring(new TimerData().loadData().indexOf("|") + 1));
                         sender.sendMessage(index + "타이머가 시작됩니다");
-                        Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
+                        TaskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(pl, new Timer(), 0, 20);
                     }
                 }
             } else if (args.length >= 2 & args.length <= 6) {
@@ -83,14 +84,9 @@ public class TimerHandler {
                     }
                     if (!Tset.equals("없음"))
                         switch (Tset) {
-                            case "전쟁":
-                                Wseconds = seconds;
-                                break;
-                            case "평화":
-                                Pseconds = seconds;
-                                break;
-                            default:
-                                sender.sendMessage(index + "없는 타입입니다");
+                            case "전쟁" -> Wseconds = seconds;
+                            case "평화" -> Pseconds = seconds;
+                            default -> sender.sendMessage(index + "없는 타입입니다");
                         }
                 }
                 if (args[0].equals("추가")) {
@@ -111,13 +107,13 @@ public class TimerHandler {
                             case "전쟁":
                                 if (Tset.equals(Timer.setting)) {
                                     Timer.count += seconds;
-                                    Bukkit.broadcastMessage(index + "관리자가 전쟁 시간을 " + seconds + "초 추가 하였습니다.");
+                                    Bukkit.broadcast(Component.text(index + "관리자가 전쟁 시간을 " + seconds + "초 추가 하였습니다."));
                                 } else sender.sendMessage(index + "현재는 전쟁 시간이 아닙니다.");
                                 break;
                             case "평화":
                                 if (Tset.equals(Timer.setting)) {
                                     Timer.count += seconds;
-                                    Bukkit.broadcastMessage(index + "관리자가 평화 시간을 " + seconds + "초 추가 하였습니다.");
+                                    Bukkit.broadcast(Component.text(index + "관리자가 평화 시간을 " + seconds + "초 추가 하였습니다."));
                                 } else sender.sendMessage(index + "현재는 평화 시간이 아닙니다.");
                                 break;
                             default:

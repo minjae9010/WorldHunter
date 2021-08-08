@@ -54,6 +54,8 @@ public class CmdHandler implements TabExecutor {
             case "연구":
                 StudyHandler.Command(sender, args);
                 break;
+            case "전쟁":
+                WarHandler.Command(sender,args);
             case "초대":
                 if (args.length==1){
                     Player p = (Player) sender;
@@ -90,22 +92,13 @@ public class CmdHandler implements TabExecutor {
                 Material Ims = Is.getType();
                 if(!Im.hasEnchants()) {
                     switch (Ims) {
-                        case STONE_PICKAXE:
-                        case STONE_AXE:
-                        case STONE_SHOVEL:
-                        case GOLDEN_PICKAXE:
-                        case GOLDEN_AXE:
-                        case STONE_SWORD:
-                        case WOODEN_AXE:
-                        case WOODEN_PICKAXE:
-                        case IRON_PICKAXE:
-                            Im.displayName(Component.text(index+" "+Ims.name().replace("_"," ")));
+                        case STONE_PICKAXE, STONE_AXE, STONE_SHOVEL, GOLDEN_PICKAXE, GOLDEN_AXE, STONE_SWORD, WOODEN_AXE, WOODEN_PICKAXE, IRON_PICKAXE -> {
+                            Im.displayName(Component.text(index + " " + Ims.name().replace("_", " ")));
                             sender.sendMessage(Im.getLocalizedName());
                             Is.setItemMeta(Im);
-                            sender.sendMessage(index+"부여가 완료되었습니다");
-                            break;
-                        default:
-                            sender.sendMessage(index+"부여가 불가능한 아이템 입니다");
+                            sender.sendMessage(index + "부여가 완료되었습니다");
+                        }
+                        default -> sender.sendMessage(index + "부여가 불가능한 아이템 입니다");
                     }
                 }else{
                     sender.sendMessage(index,"인첸트가된 아이템은 부여가 불가능합니다");
@@ -116,15 +109,10 @@ public class CmdHandler implements TabExecutor {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
-        List<String> returnList = null;
-        switch (alias) {
-            case "팀":
-                returnList = TeamHandler.TabExcutor(sender,args);
-                break;
-            case "타이머":
-                returnList = TimerHandler.TabExcutor(sender, args);
-                break;
-        }
-        return returnList;
+        return switch (alias) {
+            case "팀" -> TeamHandler.TabExcutor(sender, args);
+            case "타이머" -> TimerHandler.TabExcutor(sender, args);
+            default -> null;
+        };
     }
 }
