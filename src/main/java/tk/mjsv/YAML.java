@@ -173,9 +173,9 @@ public class YAML {
     }
     public static ChunkLoc getLandLoc(Chunk c){
         ChunkLoc center = getCenterLoc();
-        int x = center.getX()-c.getX();
-        int z = center.getZ()-c.getZ();
-        return new ChunkLoc(x,z);
+        int x = c.getX()-center.getX();
+        int z = c.getZ()-center.getZ();
+        return new ChunkLoc(z,x);
     }
     public static int getLandRange(Chunk c){
         ChunkLoc land = getLandLoc(c);
@@ -253,7 +253,7 @@ public class YAML {
                     Bukkit.getWorld(getCenterWorld()),
                     ChunkData.getDouble("land.team."+team+".spawn.x"),
                     ChunkData.getDouble("land.team."+team+".spawn.y"),
-                    ChunkData.getDouble("land.team."+team+".spawn.x"),
+                    ChunkData.getDouble("land.team."+team+".spawn.z"),
                     (float) ChunkData.getDouble("land.team."+team+".spawn.yaw"),
                     (float) ChunkData.getDouble("land.team."+team+".spawn.pitch"));
         }

@@ -4,27 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WarHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/warTimer.java" afterDir="false" />
+    <list default="true" id="cfd4ee3c-487b-4d45-8521-27a8fd218638" name="Default Changelist" comment="월드헌터 종료(마지막 업데이트)">
+      <change afterPath="$PROJECT_DIR$/.idea/WorldHunts.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/CmdHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TeamHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/CmdHandler/TimerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/WorldHunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/tk/mjsv/YAML.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/CmdHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/StudyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TeamHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/TimerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WarHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WarHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/CmdHandler/WorldHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/EventH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/EventHanler/WorldEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/LuckPermsConnetor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/LuckPermsConnetor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/warTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/TimerHandler/warTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/WorldHunter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/mjsv/YAML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/mjsv/utile/RecipeFrunce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,11 +98,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fuckingjava" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="문제" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -354,7 +351,8 @@
     <MESSAGE value="8-02 업뎃" />
     <MESSAGE value="team 명령어 tab시 보기 추가" />
     <MESSAGE value="팀 시스템까지완성 (관리 명령어 제외)" />
-    <option name="LAST_COMMIT_MESSAGE" value="팀 시스템까지완성 (관리 명령어 제외)" />
+    <MESSAGE value="월드헌터 종료(마지막 업데이트)" />
+    <option name="LAST_COMMIT_MESSAGE" value="월드헌터 종료(마지막 업데이트)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

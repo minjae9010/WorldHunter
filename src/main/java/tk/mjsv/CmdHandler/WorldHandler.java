@@ -9,14 +9,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import tk.mjsv.WorldHunter;
 import tk.mjsv.YAML;
-import tk.mjsv.utile.ChunkLoc;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorldHandler {
     private static final String index = WorldHunter.index;
-    public static List<ChunkLoc> Gb = new ArrayList<>();
+    public static List<String> Gb = new ArrayList<>();
     public static void Command(CommandSender sender,String[] args) {
         Player p = (Player) sender;
         String team = YAML.getPlayerTeam(p.getName());
@@ -49,7 +48,7 @@ public class WorldHandler {
                                     if(i.contains(Material.OAK_LOG,16)&i.contains(Material.IRON_INGOT,32)) buy = true;
                                     break;
                                 case 5:
-                                    if(i.contains(Material.IRON_NUGGET,16)&i.contains(Material.GOLD_INGOT,16)) buy = true;
+                                    if(i.contains(Material.IRON_INGOT,16)&i.contains(Material.GOLD_INGOT,16)) buy = true;
                                     break;
                                 case 4:
                                     if(i.contains(Material.GOLD_INGOT,16)&i.contains(Material.DIAMOND,3)) buy = true;
@@ -58,12 +57,12 @@ public class WorldHandler {
                                     if(i.contains(Material.GOLD_INGOT,32)&i.contains(Material.EMERALD,3)) buy = true;
                                     break;
                                 case 2:
-                                    if(i.contains(Material.EMERALD,6)) buy = true;
+                                    if(i.contains(Material.EMERALD,5)) buy = true;
                                     break;
                                 default:
                                     sender.sendMessage(index+"구매가 불가능한 땅입니다.");
                             }
-                            if(Gb.contains(YAML.getLandLoc(c))){
+                            if(Gb.contains(YAML.getLandLoc(c).toString())){
                                 sender.sendMessage(index+"그린벨트로 지정된 땅입니다");
                                 msg=false;
                             }
@@ -74,7 +73,7 @@ public class WorldHandler {
                                         i.removeItem(new ItemStack(Material.IRON_INGOT, 32));
                                     }
                                     case 5 -> {
-                                        i.removeItem(new ItemStack(Material.IRON_NUGGET, 16));
+                                        i.removeItem(new ItemStack(Material.IRON_INGOT, 16));
                                         i.removeItem(new ItemStack(Material.GOLD_INGOT, 16));
                                     }
                                     case 4 -> {
@@ -85,7 +84,7 @@ public class WorldHandler {
                                         i.removeItem(new ItemStack(Material.GOLD_INGOT, 32));
                                         i.removeItem(new ItemStack(Material.EMERALD, 3));
                                     }
-                                    case 2 -> i.removeItem(new ItemStack(Material.EMERALD, 6));
+                                    case 2 -> i.removeItem(new ItemStack(Material.EMERALD, 5));
                                 }
                                 YAML.setLandTeam(team,c);
                                 sender.sendMessage(index+"땅 구입을 완료하셨습니다");
@@ -99,9 +98,9 @@ public class WorldHandler {
                             if (YAML.setLandSpawn(team, p.getLocation()))
                                 sender.sendMessage(index + "현재 좌표가 땅 스폰으로 설정되었습니다.");
                             else sender.sendMessage(index + "땅 스폰 설정을 실패하였습니다.");
-                        }
+                        }else sender.sendMessage(index+"해당 땅은 소유자의 땅이 아닙니다");
                     }
-                    else sender.sendMessage(index+"해당 땅은 소유자의 땅이 아닙니다");
+                    else sender.sendMessage(index+"해당 땅은 주인이 없는 땅입니다");
                     
                 }
             }
@@ -119,13 +118,13 @@ public class WorldHandler {
                 }
                 if(args[0].equals("그린벨트")){
                     if(args.length==1) {
-                        for (ChunkLoc l : Gb) {
-                            sender.sendMessage(l.toString());
+                        for (String l : Gb) {
+                            sender.sendMessage(l);
                         }
                     }
                     if(args.length==2){
                         if(args[1].equals("true")&YAML.getLandTeam(c)==null&!Gb.contains(YAML.getLandLoc(c))){
-                            Gb.add(YAML.getLandLoc(c));
+                            Gb.add(YAML.getLandLoc(c).toString());
                             sender.sendMessage(index+"그린벨트 설정이 완료되었습니다.");
                         }else if(args[1].equals("false")|Gb.contains(YAML.getLandLoc(c))){
                             Gb.remove(YAML.getLandLoc(c));

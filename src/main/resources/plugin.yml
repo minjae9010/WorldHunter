@@ -14,15 +14,11 @@ commands:
     description: 공지 명령어
   남은시간:
     description: 타이머 남은시간
-  수분:
-    description: 수분 확인
-#  연구:
-#    description: 연구 명령어
   땅:
     description: 땅 명령어
   지명수배:
     description: 지명수배 명령어
   초대:
     description: 화이트리스트
-  부여:
-    description: 아이템 이름부여
+  전쟁:
+    description: 전쟁명령어

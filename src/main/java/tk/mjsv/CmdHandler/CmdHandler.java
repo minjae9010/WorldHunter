@@ -1,6 +1,5 @@
 package tk.mjsv.CmdHandler;
 
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -10,7 +9,6 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tk.mjsv.TimerHandler.Timer;
@@ -56,6 +54,7 @@ public class CmdHandler implements TabExecutor {
                 break;
             case "전쟁":
                 WarHandler.Command(sender,args);
+                break;
             case "초대":
                 if (args.length==1){
                     Player p = (Player) sender;
@@ -85,24 +84,8 @@ public class CmdHandler implements TabExecutor {
                     else sender.sendMessage(index+" 초대하기 위한 재료가 모자랍니다(금20+에메랄드,금32+다이아5)");
                 }
                 break;
-            case "부여":
-                Player p = (Player)sender;
-                ItemStack Is =p.getInventory().getItemInMainHand();
-                ItemMeta Im = Is.getItemMeta();
-                Material Ims = Is.getType();
-                if(!Im.hasEnchants()) {
-                    switch (Ims) {
-                        case STONE_PICKAXE, STONE_AXE, STONE_SHOVEL, GOLDEN_PICKAXE, GOLDEN_AXE, STONE_SWORD, WOODEN_AXE, WOODEN_PICKAXE, IRON_PICKAXE -> {
-                            Im.displayName(Component.text(index + " " + Ims.name().replace("_", " ")));
-                            sender.sendMessage(Im.getLocalizedName());
-                            Is.setItemMeta(Im);
-                            sender.sendMessage(index + "부여가 완료되었습니다");
-                        }
-                        default -> sender.sendMessage(index + "부여가 불가능한 아이템 입니다");
-                    }
-                }else{
-                    sender.sendMessage(index,"인첸트가된 아이템은 부여가 불가능합니다");
-                }
+            default:
+                break;
         }
         return false;
     }

@@ -7,8 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import tk.mjsv.CmdHandler.CmdHandler;
 import tk.mjsv.EventHanler.EventH;
 import tk.mjsv.TimerHandler.PvpTime;
-import tk.mjsv.TimerHandler.warTimer;
-import tk.mjsv.utile.RecipeFrunce;
 
 import java.util.Objects;
 
@@ -24,8 +22,6 @@ public final class WorldHunter extends JavaPlugin {
         });
         YAML.loadData();
         Bukkit.getPluginManager().registerEvents(new EventH(),this);
-//        Bukkit.getPluginManager().registerEvents(new StudyHandler(),this);
-        RecipeFrunce.enableFurnceRecipe(getServer());
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new PvpTime(), 0, 20);
 
     }
